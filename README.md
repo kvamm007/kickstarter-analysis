@@ -11,8 +11,23 @@ This analysis was done to help analyze and visualize two specific cuts of the Ki
 ### Analysis of Outcomes Based on Launch Date
 For Outcomes Based on Launch Date, we analyzed all Kickstarter campaigns listed, across all countries and years, in the parent category of "Theater" (all sub-categories included). We counted how many campaigns were successful, failed, or canceled, in each calendar month, based on the launch date of the campaign. "Success" was determined based on whether the campaign's pledge met or exceeded it's stated goal. Canceled campaigns would be those ended by the organizer prior to completion of the goal or stated time frame. To accomplish this, we used a pivot table to summarize the data combined with a pivot chart for visualization. See chart below in conclusions. 
 
+Pivot table fields:
+![Pivot Table Fields](https://user-images.githubusercontent.com/85597801/124365337-eedb4d80-dc0c-11eb-97d3-8047e0dcd2b7.png)
+
+Pivot table result:
+![Launch Date Table](https://user-images.githubusercontent.com/85597801/124365340-f7338880-dc0c-11eb-846f-c849686acf41.png)
+
+
 ### Analysis of Outcomes Based on Goals
 For Outcomes based on Goals, we analyzed Kickstarter campaigns listed in the sub-category of "plays" across all years and countries. We split the goals into ranges of $5,000 per range, with Less than $1,000 and over $50,000 as the bottom and top ends, respectively. We categorized each sub-category "play" campaign into successful, failed or canceled (there were no canceled plays in the data set) by the range that the campaign's goal fell into. We then calculated the percentage in each range that was successful or failed, to get a sense of what ranges tend to have more or less chance of success, based on their stated fundraising goal. This was completed using formulas with a line graph for visualization; see graph below in conclusions. 
+
+	-Formula examples:
+		- for counting successful campaigns, in the sub-category of plays, less than $1,000: =COUNTIFS(Kickstarter!$F:$F,"successful",Kickstarter!$D:$D,"1000",Kickstarter!$R:$R,"plays")
+		- for total plays less than $1,000: =SUM(B2:D2)
+		- for percentage successful less than $1,000: =ROUND(B2/E2,3)
+Resulting table:	
+![Outcomes Based on Goals Table](https://user-images.githubusercontent.com/85597801/124365313-bd628200-dc0c-11eb-81be-a3138e3dc61a.png)
+
 
 ### Challenges and Difficulties Encountered
 The main challenges encountered are due to the data that is available for analysis; see limitations of the data set and other analysis we could create below for some challenges encountered in the data set as well as recommendations for future analysis. All subtotals were verified for accuracy as analysis was being performed. 
